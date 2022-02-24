@@ -21,7 +21,7 @@ async function getNotes() {
   while (container.firstChild) {
     container.removeChild(container.lastChild);
   }
-  data.forEach((element) => addNote(element));
+  data.payload.forEach((element) => addNote(element));
 }
 
 async function postNote() {

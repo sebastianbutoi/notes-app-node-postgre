@@ -1,4 +1,4 @@
-import query from "../index.js";
+import query from "../config.js";
 
 const sqlString = `CREATE TABLE IF NOT EXISTS notes (id SERIAL PRIMARY KEY, title TEXT, text TEXT);`;
 

@@ -1,10 +1,10 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { readNotesTable } from "./db/scripts/readNotesTable";
-import { populateNotesTable } from "./db/scripts/populateNotesTable";
-import { deleteNote } from "./db/scripts/deleteNote";
-import { updateNote } from "./db/scripts/updateNote";
+import { readNotesTable } from "./db/scripts/readNotesTable.js";
+import { populateNotesTable } from "./db/scripts/populateNotesTable.js";
+import { deleteNote } from "./db/scripts/deleteNote.js";
+import { updateNote } from "./db/scripts/updateNote.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

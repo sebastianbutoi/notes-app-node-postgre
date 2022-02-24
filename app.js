@@ -1,6 +1,10 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { readNotesTable } from "./db/scripts/readNotesTable";
+import { populateNotesTable } from "./db/scripts/populateNotesTable";
+import { deleteNote } from "./db/scripts/deleteNote";
+import { updateNote } from "./db/scripts/updateNote";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

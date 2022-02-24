@@ -12,26 +12,29 @@ const __dirname = dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(__dirname + "/public"));
 
 app.get("/notes", async (req, res) => {
   const data = await readNotesTable();
-  res.json({ data });
+  res.json({ status: "success", payload: data });
 });
 
 app.post("/notes", async (req, res) => {
   const data = await populateNotesTable(req.body);
-  res.status(201).json({ data });
+  res.status(201).json({ status: "success", payload: data });
 });
 
 app.delete("/notes", async (req, res) => {
   const data = await deleteNote(req.body);
-  res.status(200).json({ data });
+  res.status(200).json({ status: "success", payload: data });
 });
 
 app.patch("/notes", async (req, res) => {
   const data = await updateNote(req.body);
-  res.status(200).json({ data });
+  res.status(200).json({ status: "success", payload: data });
 });
 
 app.listen(PORT, () => {
